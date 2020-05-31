@@ -13,19 +13,26 @@
                     </h3>
                     <h3><a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">@item.Name</a></h3>
                     <p>@item.Description</p>
-                    <p>Quantity Left: @item.Quantity</p>
+                    @if (item.Quantity > 0)
+                    {
+                        <p>Quantity Left: @item.Quantity</p>
+                    }
+                    else
+                    {
+                        <p class="out_of_stock"> Item out of stock. Please check later.</p>
+                    }
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (item.Quantity > 0)
                         {
                             <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout" asp-route-id="@item.ItemId">CheckOut</a>
-                        }else {
-                            <p class="out_of_stock"> Item out of stock. Please check later.</p>
                         }
 
-                        }
-                        else
-                        { <p>Login/Register to Buy!</p>}
+
+                    }
+                    else
+                    { <p>Login/Register to Buy!</p>}
                 </div>
             </div>
         }
