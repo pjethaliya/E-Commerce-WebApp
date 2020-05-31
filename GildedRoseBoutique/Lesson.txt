@@ -1,0 +1,59 @@
+--------Setting up Developement Enviornment
+-> Install .net core sdk for mac (3.1)
+-> Install Visual Studio code
+-> Install VS Code extension:Open command Pallete (shift+cmnd+p)
+    type intall Extensions
+    1. Angular v2 typescript snippets
+    2. Asp.net Helper - For developing asp .net mvc application
+    3. AutoImport - import the referenece
+    4. Beautify  - formatting JS and HTML code
+    5. C#
+    6. C# Extensions
+    7. Docker (optional)
+    8. MSSQL (optional)
+    9. RestClient (optional)
+
+-> Install YeoMan for scaffolding the template
+-> npm install -g yo generator-aspnetcore-spa
+
+-> Install sql server
+    -> Install Docker from website
+    -> sudo docker pull microsoft/mssql-server-linux
+    -> sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=MyComplexPassword!234' -p 1433:1433 -d microsoft/mssql-server-linux
+    -> Install macsqlclient - free for 7 days
+    -> server : localhost
+    -> user : sa
+    -> pass : MyComplexPassword!234
+
+
+------------ Building Api 
+-> Creating the Database - topic
+    -> Need to run dotnet add package Microsoft.EntityFrameworkCore.Design
+    -> Run initial Migration - dotnet ef migrations add InitialModel
+    ->dotnet ef datbase update
+    ->dotnet ef migrations remove
+    ->dotnet ef Database update 0 ---> to remove the previous migration
+
+-> Docker command to run mssql in container
+-> sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=MyComplexPassword!234' -p 1433:1433 -d microsoft/mssql-server-linux
+
+
+
+-> Create a Resources folder for client and map it to the domain model
+-> Use automapper to map the domain model and resources model
+->dotnet add package AutoMapper
+->dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 7.0.0
+->link I followed - https://www.codementor.io/@zedotech/how-to-using-automapper-on-asp-net-core-3-0-via-dependencyinjection-zq497lzsq
+
+---------- 3 -------Angular Forms Building
+->Creating an Angular Component 
+    -> install angular cli = sudo npm install @angular/cli@latest -g
+    -> Create new project to get angular.json file = ng new hello-world
+    -> Copy this file in Vega project 
+    -> Install Npm as dev dependency in Vega project
+    -> npm install @angular/cli@latest --save-dev
+    -> To create a component go to app folder and run 
+    -> ng g c vehicle-form --module app
+    -> Create Service using command
+    -> Create Services folder in app and run ng g s make
+    

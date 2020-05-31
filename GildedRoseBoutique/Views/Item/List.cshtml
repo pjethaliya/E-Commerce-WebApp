@@ -1,0 +1,31 @@
+﻿@model IEnumerable<GildedRoseBoutique.Models.Item>
+
+        @foreach(var item in Model)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="@item.ImageUrl">
+                </div>
+
+                <div class="caption">
+                    <h3 class="pull-right">
+                        @item.Price
+                    </h3>
+                    <h3><a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">@item.Name</a></h3>
+                    <p>@item.Description</p>
+                    <p>Quantity Left: @item.Quantity</p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (item.Quantity > 0)
+                        {
+                            <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout" asp-route-id="@item.ItemId">CheckOut</a>
+                        }else {
+                            <p class="out_of_stock"> Item out of stock. Please check later.</p>
+                        }
+
+                        }
+                        else
+                        { <p>Login/Register to Buy!</p>}
+                </div>
+            </div>
+        }
