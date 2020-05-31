@@ -1,9 +1,10 @@
 ﻿using System;
+using GildedRoseBoutique.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace GildedRoseBoutique.Models
+namespace GildedRoseBoutique.Persistence
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using GildedRoseBoutique.Controllers;
 using GildedRoseBoutique.Models;
+using GildedRoseBoutique.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
-using GildedRoseBoutique.ViewModels;
 
 namespace GildedRoseBoutiqueTests
 {

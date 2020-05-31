@@ -1,6 +1,6 @@
 ﻿using System;
 using GildedRoseBoutique.Models;
-using GildedRoseBoutique.ViewModels;
+using GildedRoseBoutique.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GildedRoseBoutique.Controllers

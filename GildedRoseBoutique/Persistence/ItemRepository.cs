@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GildedRoseBoutique.Models;
 
-namespace GildedRoseBoutique.Models
+namespace GildedRoseBoutique.Persistence
 {
     public class ItemRepository : IItemRepository
     {

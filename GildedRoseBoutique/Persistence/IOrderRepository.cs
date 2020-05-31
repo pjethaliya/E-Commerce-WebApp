@@ -1,5 +1,7 @@
 ﻿using System;
-namespace GildedRoseBoutique.Models
+using GildedRoseBoutique.Models;
+
+namespace GildedRoseBoutique.Persistence
 {
     public interface IOrderRepository
     {
