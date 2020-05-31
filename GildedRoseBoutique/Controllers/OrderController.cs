@@ -1,10 +1,12 @@
 ﻿using System;
 using GildedRoseBoutique.Models;
 using GildedRoseBoutique.Persistence;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GildedRoseBoutique.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
 
